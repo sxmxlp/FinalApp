@@ -24,3 +24,13 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    supportLibVersion = '25.3.1'
+    constraintVersion = '1.0.2'
+    kotlinVersion = '1.1.2-4'
+
+    supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
+    constraintLayout = "com.android.support.constraint:constraint-layout:$constraintVersion"
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+}
