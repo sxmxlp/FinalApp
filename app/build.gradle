@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "sxmxlp.gmail.com.finalapp"
         minSdkVersion 19
@@ -31,7 +31,7 @@ dependencies {
         exclude group: 'com.google.code.findbugs'
     })
     testCompile 'junit:junit:4.12'
-    
+
     compile rootProject.ext.supportLibAppCompat
     compile rootProject.ext.constraintLayout
     compile rootProject.ext.kotlin
