@@ -36,6 +36,6 @@ dependencies {
     compile rootProject.ext.constraintLayout
     compile rootProject.ext.kotlin
     compile rootProject.dagger
-    compile rootProject.daggerProcessor
+    annotationProcessor rootProject.daggerProcessor
     compile rootProject.daggerSupport
 }
