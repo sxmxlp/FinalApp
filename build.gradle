@@ -29,8 +29,12 @@ ext {
     supportLibVersion = '25.3.1'
     constraintVersion = '1.0.2'
     kotlinVersion = '1.1.2-4'
+    daggerVersion = '2.11'
 
     supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
     constraintLayout = "com.android.support.constraint:constraint-layout:$constraintVersion"
     kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
+    daggerSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
 }
