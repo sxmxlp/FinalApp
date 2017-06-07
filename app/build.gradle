@@ -35,7 +35,11 @@ dependencies {
     compile rootProject.ext.supportLibAppCompat
     compile rootProject.ext.constraintLayout
     compile rootProject.ext.kotlin
-    compile rootProject.dagger
-    annotationProcessor rootProject.daggerProcessor
-    compile rootProject.daggerSupport
+
+    //dagger
+    annotationProcessor rootProject.ext.daggerCompiler
+    compile rootProject.ext.dagger
+    compile rootProject.ext.daggerAndroid
+    compile rootProject.ext.daggerAndroidSupport
+    annotationProcessor rootProject.ext.daggerAndroidProcessor
 }

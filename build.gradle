@@ -9,7 +9,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -36,8 +35,10 @@ ext {
 
     supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
     constraintLayout = "com.android.support.constraint:constraint-layout:$constraintVersion"
-    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
     dagger = "com.google.dagger:dagger:$daggerVersion"
-    daggerProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
-    daggerSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+    daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
+    daggerAndroidSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
+    daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
 }
