@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import retrofit2.Retrofit;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initViews() {
         findViewById(R.id.btn_dagger).setOnClickListener(this);
+        findViewById(R.id.btn_retrofit).setOnClickListener(this);
     }
 
     @Override
@@ -22,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btn_dagger:
                 DaggerActivity.startActivity(this);
+                break;
+            case R.id.btn_retrofit:
+                RetrofitActivity.startActivity(this);
                 break;
             default:
                 break;

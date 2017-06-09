@@ -32,13 +32,23 @@ ext {
     constraintVersion = '1.0.2'
     kotlinVersion = '1.1.2-4'
     daggerVersion = '2.11'
+    retrofitVersion = '2.3.0'
+    okhttpVersion = '3.8.0'
 
     supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
     constraintLayout = "com.android.support.constraint:constraint-layout:$constraintVersion"
     kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    //dagger
     dagger = "com.google.dagger:dagger:$daggerVersion"
     daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
     daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
     daggerAndroidSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
     daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
+    //retrofit
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    converterGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    converterScalars = "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    //okhttp
+    okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
 }

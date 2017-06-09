@@ -1,4 +1,4 @@
-package sxmxlp.gmail.com.finalapp.network;
+package sxmxlp.gmail.com.finalapp.github.model;
 
 /**
  * Created by Lee on 2017/6/9.

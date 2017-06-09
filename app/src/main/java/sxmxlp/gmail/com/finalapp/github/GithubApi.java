@@ -1,10 +1,11 @@
-package sxmxlp.gmail.com.finalapp.network;
+package sxmxlp.gmail.com.finalapp.github;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import sxmxlp.gmail.com.finalapp.github.model.Contributor;
 
 /**
  * Created by Lee on 2017/6/9.

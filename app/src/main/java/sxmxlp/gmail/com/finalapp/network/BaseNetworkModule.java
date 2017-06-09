@@ -16,7 +16,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 
 @Module
-public class NetworkModule {
+public class BaseNetworkModule {
     @Provides
     @Singleton
     public static Retrofit provideRetrofit(OkHttpClient client) {
