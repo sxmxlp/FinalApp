@@ -34,6 +34,8 @@ ext {
     daggerVersion = '2.11'
     retrofitVersion = '2.3.0'
     okhttpVersion = '3.8.0'
+    rxjavaVersion = '2.1.0'
+    rxandroidVersion = '2.0.1'
 
     supportLibAppCompat = "com.android.support:appcompat-v7:$supportLibVersion"
     constraintLayout = "com.android.support.constraint:constraint-layout:$constraintVersion"
@@ -50,5 +52,8 @@ ext {
     converterScalars = "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
     //okhttp
     okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    //rxjava
+    rxjava = "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
 
 }

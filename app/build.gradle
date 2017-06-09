@@ -30,8 +30,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.google.code.findbugs'
     })
-    testCompile 'junit:junit:4.12'//
-
+    testCompile 'junit:junit:4.12'
+    //
     compile rootProject.ext.supportLibAppCompat
     //
     compile rootProject.ext.constraintLayout
@@ -50,9 +50,16 @@ dependencies {
     annotationProcessor rootProject.ext.daggerAndroidProcessor
     //
     //retrofit
-    compile rootProject.ext.retrofit //
-    compile rootProject.ext.converterGson //
-    compile rootProject.ext.converterScalars//
+    compile rootProject.ext.retrofit
+    //
+    compile rootProject.ext.converterGson
+    //
+    compile rootProject.ext.converterScalars
+    //
     //okhttp
-    compile rootProject.ext.okhttp//
+    compile rootProject.ext.okhttp
+    //
+    compile rootProject.ext.rxjava
+    //
+    compile rootProject.ext.rxandroid
 }
