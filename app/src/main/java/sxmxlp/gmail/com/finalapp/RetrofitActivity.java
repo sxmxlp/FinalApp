@@ -8,15 +8,21 @@ import android.view.View;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import sxmxlp.gmail.com.finalapp.github.DaggerGithubComponent;
 import sxmxlp.gmail.com.finalapp.github.GithubComponent;
 import sxmxlp.gmail.com.finalapp.github.GithubService;
 import sxmxlp.gmail.com.finalapp.github.model.Contributor;
+import sxmxlp.gmail.com.finalapp.network.ApiConstants;
+import sxmxlp.gmail.com.finalapp.network.BaseNetworkModule;
+import sxmxlp.gmail.com.finalapp.utils.LogUtils;
 
 public class RetrofitActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = RetrofitActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +47,34 @@ public class RetrofitActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void handleClick() {
-        GithubComponent component = DaggerGithubComponent.create();
+        GithubComponent component = DaggerGithubComponent.builder()
+                .baseNetworkModule(new BaseNetworkModule(ApiConstants.BASE_URL_GITHUBAPI))
+                .build();
         GithubService service = component.service();
-        service.api.contributors("square", "retrofit").enqueue(new Callback<List<Contributor>>() {
-            @Override
-            public void onResponse(Call<List<Contributor>> call, Response<List<Contributor>> response) {
-                List<Contributor> body = response.body();
-            }
+        service.api.contributors("square", "retrofit")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<List<Contributor>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
 
-            @Override
-            public void onFailure(Call<List<Contributor>> call, Throwable t) {
+                    }
 
-            }
-        });
+                    @Override
+                    public void onNext(@NonNull List<Contributor> contributors) {
+                        LogUtils.d(TAG, contributors.toString());
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
     public static void startActivity(Context context) {

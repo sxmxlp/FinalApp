@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 public class GithubModule {
     @Provides
     @Singleton
-    public static GithubApi provideGithubServie(Retrofit retrofit) {
+    public static GithubApi provideGithubApi(Retrofit retrofit) {
         return retrofit.create(GithubApi.class);
     }
 }

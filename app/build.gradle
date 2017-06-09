@@ -37,7 +37,6 @@ dependencies {
     compile rootProject.ext.constraintLayout
     //
     compile rootProject.ext.kotlin
-    //
     //dagger
     annotationProcessor rootProject.ext.daggerCompiler
     //
@@ -48,7 +47,6 @@ dependencies {
     compile rootProject.ext.daggerAndroidSupport
     //
     annotationProcessor rootProject.ext.daggerAndroidProcessor
-    //
     //retrofit
     compile rootProject.ext.retrofit
     //
@@ -56,6 +54,7 @@ dependencies {
     //
     compile rootProject.ext.converterScalars
     //
+    compile rootProject.ext.adapterRxjava
     //okhttp
     compile rootProject.ext.okhttp
     //

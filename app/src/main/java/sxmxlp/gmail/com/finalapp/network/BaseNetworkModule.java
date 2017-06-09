@@ -8,6 +8,7 @@ import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
@@ -17,13 +18,20 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 @Module
 public class BaseNetworkModule {
+    private final String baseUrl;
+
+    public BaseNetworkModule(String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+
     @Provides
     @Singleton
-    public static Retrofit provideRetrofit(OkHttpClient client) {
+    public Retrofit provideRetrofit(OkHttpClient client) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ApiConstants.BASE_URL)
+                .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
                 .build();
         return retrofit;
@@ -31,7 +39,7 @@ public class BaseNetworkModule {
 
     @Provides
     @Singleton
-    public static OkHttpClient provideOkHttpClient(NetworInterceptor interceptor) {
+    public OkHttpClient provideOkHttpClient(NetworInterceptor interceptor) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .connectTimeout(60 * 1000, TimeUnit.MILLISECONDS)
@@ -41,5 +49,4 @@ public class BaseNetworkModule {
 
         return client;
     }
-
 }
