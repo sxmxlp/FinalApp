@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
+import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -27,8 +28,13 @@ public class NetworInterceptor implements Interceptor {
         int versionCode = BuildConfig.VERSION_CODE;
 
         Request request = chain.request();
-
-        Response response = chain.proceed(request);
-        return response;
+        HttpUrl originalUrl = request.url();
+        HttpUrl newUrl = originalUrl.newBuilder()
+                .addQueryParameter("applicationId", applicationId)
+                .addQueryParameter("versionName", versionName)
+                .addQueryParameter("versionCode", String.valueOf(versionCode))
+                .build();
+        Request newRequest = request.newBuilder().url(newUrl).build();
+        return chain.proceed(newRequest);
     }
 }

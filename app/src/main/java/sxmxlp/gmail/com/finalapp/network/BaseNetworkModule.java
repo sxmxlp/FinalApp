@@ -36,6 +36,7 @@ public class BaseNetworkModule {
                 .addInterceptor(interceptor)
                 .connectTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                 .readTimeout(60 * 1000, TimeUnit.MILLISECONDS)
+                .writeTimeout(60 * 1000, TimeUnit.MILLISECONDS)
                 .build();
 
         return client;
