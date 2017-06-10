@@ -51,7 +51,7 @@ public class RetrofitActivity extends AppCompatActivity implements View.OnClickL
                 .baseNetworkModule(new BaseNetworkModule(ApiConstants.BASE_URL_GITHUBAPI))
                 .build();
         GithubService service = component.service();
-        service.api.contributors("square", "retrofit")
+        service.getApi().contributors("square", "retrofit")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<Contributor>>() {
