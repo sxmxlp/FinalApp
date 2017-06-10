@@ -1,4 +1,4 @@
-package sxmxlp.gmail.com.finalapp.network;
+package sxmxlp.gmail.com.finalapp.base.constant;
 
 import sxmxlp.gmail.com.finalapp.github.GithubApi;
 

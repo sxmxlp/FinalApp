@@ -12,7 +12,7 @@ public class GithubService {
 
     @Inject
     public GithubService(GithubApi api) {
-        this.api =  api;
+        this.api = api;
     }
 
     public GithubApi getApi() {

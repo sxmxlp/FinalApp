@@ -13,12 +13,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import sxmxlp.gmail.com.finalapp.github.DaggerGithubComponent;
-import sxmxlp.gmail.com.finalapp.github.GithubComponent;
 import sxmxlp.gmail.com.finalapp.github.GithubService;
 import sxmxlp.gmail.com.finalapp.github.model.Contributor;
-import sxmxlp.gmail.com.finalapp.network.ApiConstants;
-import sxmxlp.gmail.com.finalapp.base.module.BaseNetworkModule;
+import sxmxlp.gmail.com.finalapp.github.GithubManager;
 import sxmxlp.gmail.com.finalapp.utils.LogUtils;
 
 public class RetrofitActivity extends AppCompatActivity implements View.OnClickListener {
@@ -47,10 +44,7 @@ public class RetrofitActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void handleClick() {
-        GithubComponent component = DaggerGithubComponent.builder()
-                .baseNetworkModule(new BaseNetworkModule(ApiConstants.BASE_URL_GITHUBAPI))
-                .build();
-        GithubService service = component.service();
+        GithubService service = GithubManager.getInstance().getService();
         service.getApi().contributors("square", "retrofit")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

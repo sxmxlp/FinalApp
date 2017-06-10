@@ -1,9 +1,10 @@
-package sxmxlp.gmail.com.finalapp.github;
+package sxmxlp.gmail.com.finalapp.github.component;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
-import sxmxlp.gmail.com.finalapp.base.module.BaseNetworkModule;
+import sxmxlp.gmail.com.finalapp.github.GithubService;
+import sxmxlp.gmail.com.finalapp.github.module.GithubModule;
 
 /**
  * Created by Lee on 2017/6/9.
