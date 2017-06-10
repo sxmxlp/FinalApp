@@ -1,4 +1,4 @@
-package sxmxlp.gmail.com.finalapp.network;
+package sxmxlp.gmail.com.finalapp.base.network;
 
 import java.io.IOException;
 
@@ -14,10 +14,10 @@ import sxmxlp.gmail.com.finalapp.BuildConfig;
  * Created by Lee on 2017/6/9.
  */
 
-public class NetworInterceptor implements Interceptor {
+public class CommonInterceptor implements Interceptor {
 
     @Inject
-    public NetworInterceptor() {
+    public CommonInterceptor() {
 
     }
 

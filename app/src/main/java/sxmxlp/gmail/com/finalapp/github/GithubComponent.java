@@ -3,7 +3,7 @@ package sxmxlp.gmail.com.finalapp.github;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import sxmxlp.gmail.com.finalapp.network.BaseNetworkModule;
+import sxmxlp.gmail.com.finalapp.base.module.BaseNetworkModule;
 
 /**
  * Created by Lee on 2017/6/9.

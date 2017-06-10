@@ -18,7 +18,7 @@ import sxmxlp.gmail.com.finalapp.github.GithubComponent;
 import sxmxlp.gmail.com.finalapp.github.GithubService;
 import sxmxlp.gmail.com.finalapp.github.model.Contributor;
 import sxmxlp.gmail.com.finalapp.network.ApiConstants;
-import sxmxlp.gmail.com.finalapp.network.BaseNetworkModule;
+import sxmxlp.gmail.com.finalapp.base.module.BaseNetworkModule;
 import sxmxlp.gmail.com.finalapp.utils.LogUtils;
 
 public class RetrofitActivity extends AppCompatActivity implements View.OnClickListener {

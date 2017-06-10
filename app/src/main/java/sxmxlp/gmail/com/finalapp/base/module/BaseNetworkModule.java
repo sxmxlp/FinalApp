@@ -1,4 +1,4 @@
-package sxmxlp.gmail.com.finalapp.network;
+package sxmxlp.gmail.com.finalapp.base.module;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +12,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
+import sxmxlp.gmail.com.finalapp.base.network.CommonInterceptor;
 
 /**
  * Created by Lee on 2017/6/9.
@@ -40,7 +41,7 @@ public class BaseNetworkModule {
 
     @Provides
     @Singleton
-    public OkHttpClient provideOkHttpClient(NetworInterceptor interceptor) {
+    public OkHttpClient provideOkHttpClient(CommonInterceptor interceptor) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .connectTimeout(60 * 1000, TimeUnit.MILLISECONDS)
