@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import dagger.Reusable;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -25,7 +26,7 @@ public class BaseNetworkModule {
     }
 
     @Provides
-    @Singleton
+    @Reusable
     public Retrofit provideRetrofit(OkHttpClient client) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
