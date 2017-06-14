@@ -56,5 +56,6 @@ ext {
     //rxjava
     rxjava = "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    supportDesign = "com.android.support:design:$supportLibVersion"
 
 }

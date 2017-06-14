@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import sxmxlp.gmail.com.finalapp.dagger.CoffeeComponent;
-import sxmxlp.gmail.com.finalapp.dagger.CoffeeMaker;
-import sxmxlp.gmail.com.finalapp.dagger.DaggerCoffeeComponent;
+import dagger.android.AndroidInjection;
 
 public class DaggerActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger);
         initViews();
@@ -35,9 +34,6 @@ public class DaggerActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void handleClick() {
-        CoffeeComponent component = DaggerCoffeeComponent.create();
-        CoffeeMaker maker = component.maker();
-        maker.brew();
     }
 
     public static void startActivity(Context context) {

@@ -2,6 +2,7 @@ package sxmxlp.gmail.com.finalapp.github;
 
 import sxmxlp.gmail.com.finalapp.base.module.BaseNetworkModule;
 import sxmxlp.gmail.com.finalapp.base.constant.ApiConstants;
+import sxmxlp.gmail.com.finalapp.github.component.DaggerGithubComponent;
 import sxmxlp.gmail.com.finalapp.github.component.GithubComponent;
 
 /**

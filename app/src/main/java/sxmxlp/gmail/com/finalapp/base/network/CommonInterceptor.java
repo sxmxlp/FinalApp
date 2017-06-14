@@ -3,6 +3,7 @@ package sxmxlp.gmail.com.finalapp.base.network;
 import java.io.IOException;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -14,6 +15,7 @@ import sxmxlp.gmail.com.finalapp.BuildConfig;
  * Created by Lee on 2017/6/9.
  */
 
+@Singleton
 public class CommonInterceptor implements Interceptor {
 
     @Inject
